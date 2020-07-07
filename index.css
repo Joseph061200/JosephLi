@@ -5,7 +5,13 @@ html{
 body, html{
     margin: 0;
     font-family: helvetica,sans-serif;
+    /* overflow: hidden; */
     
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 p{
@@ -50,15 +56,19 @@ p{
                 }
                 li:hover{
                     text-decoration: underline;
+                    cursor: pointer;
                 }
+            .material-icons:hover{
+                cursor: pointer;
+            }
     header{
         position: fixed;
         z-index: 1;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
-        width: 80vw;
+        padding: 10px 50px;
+        width: 100vw;
         background-color: rgba(255, 255, 255, 0.75);
     }
             header a{
@@ -66,10 +76,12 @@ p{
                 font-weight: bolder;
                 font-size: 40px;
                 color: black;
+                cursor: pointer;
             }
             #navbar{
                 display: flex;
-                /* justify-content: flex-end; */
+                justify-content: flex-end;
+                margin-right: 150px;;
             }
                 #navbar a{
                     padding: 15px;
@@ -86,11 +98,26 @@ p{
                 top: 25px;
                 right: 50px;
             }
+    @supports(scroll-snap-type: y proximity) {
+        .no-support {
+            display: none;
+        }
+        }
+    main{
+        height: 100vh;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-points-y: repeat(100vh);
+        scroll-snap-type: y proximity;
+    }
     main > div{
         width: 80vw;
         height: 100vh;
         padding: 0px 10vw;
         align-items: center;
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+        scroll-behavior: smooth;
     }
 
     /* header */
@@ -116,28 +143,110 @@ p{
             height: 500px;
             margin-right: 100px;
         }
+    .demo{
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
     .myVideo{
         width: 100vw;
     }
-    #Photoshop{
+
+    #Portfolio{
         background: black;
         height: auto;
+        color: white;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
-
+/* gallery */
     .gallery{
+        position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 50px;
     }
-    .gallery div{
+    .popup{
+        display: none;
+        justify-content: space-between;
+        /* justify-content: center; */
+        align-items: center;
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width:100vw;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .popup:hover{
+        cursor: pointer;
+    }
+    .popupText{
+        margin-left: 60vh;
+        margin-right: 5vh;
+        max-width: 80vh;
+    }
+    .popupText strong{
+        letter-spacing: 1px;
+    }
+    .navIcons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 100px;
+        margin: 30px;
+        border-radius: 10px;
+        background-color:rgb(255, 255, 255,0.5);
+    }
+    .navIcons:hover{
+        background-color:rgb(255, 255, 255);
+        color: black;
+    }
+    .container{
+        position: relative;
         width: 25vw;
         height: 25vw;
         overflow: hidden;
+        transition: .3s ease;
     }
     .gallery img {
         object-fit: cover;
         width:100%;
     }
+    .gallery video{
+        object-fit: cover;
+        width:100%;
+    }
+    .landscape{
+        object-fit: cover;
+        height:100%;
+        width: auto;
+    }
+    .hidden{
+        display: none;
+    }
+    .overlay{
+        display: flex;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        transition: .3s ease;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container:hover .overlay {
+        cursor: pointer;
+        opacity: 1;
+      }
+
     #Illustrator{
         background-color: orange;
     }

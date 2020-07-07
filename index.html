@@ -13,11 +13,10 @@
                     <div id="menu1">
                         <i class="material-icons" onclick="menuToggle()">close</i>
                         <ul>
-                            <li>Home</li>
                             <li onclick="about()">About</li>
-                            <li>Portfolio</li>
-                            <li>Projects</li>
-                            <li>Contact</li>
+                            <li onclick="portfolio()">Portfolio</li>
+                            <li onclick="projects()">Projects</li>
+                            <li onclick="contact()">Contact</li>
                         </ul>
                     </div>
                 </div>
@@ -25,11 +24,10 @@
             <!-- <div id="menubar"> -->
                 <a href="index.html">Joseph.</a>
                 <div id="navbar">
-                    <a href="index.html">HOME</a>
                     <a onclick="about()">ABOUT</a>
-                    <a href="Portfolio">PORTFOLIO</a>
-                    <a href="Projects">PROJECTS</a>
-                    <a href="Contact">CONTACT</a>
+                    <a onclick="portfolio()">PORTFOLIO</a>
+                    <a onclick="projects()">PROJECTS</a>
+                    <a onclick="contact()">CONTACT</a>
                 </div>
                 <i class="material-icons" onclick="menuToggle()">menu</i>
             <!-- </div> -->
@@ -37,7 +35,7 @@
         
         <!-- Top Bar -->
         <!-- Main Content -->
-        <main>
+        <main class="main">
             <div id="landingpage">
                 <div>
                     <p>Hello, I am</p>
@@ -54,30 +52,102 @@
                     <h2>ABOUT</h2>
                     <p>"My passion is delivering high quality products to both the client and consumer that will exceed their expectations. I&#39m a student at the British Columbia Institute of Technology (BCIT), and I am eager to learn, grow, and help others succeed along the way. <br><br>
 
-                    The past year I&#39ve been working with my classmates to complete projects that will enhance the user&#39s experience and communicate a brand\’s identity in the most effective way. As a Web/User Interface Designer, my goal is to build a product that clearly reflects the values of the client through compelling designs and seamless interaction."
+                    The past year I&#39ve been working with my classmates to complete projects that will enhance the user&#39s experience and communicate a brand&#39s identity in the most effective way. As a Web/User Interface Designer, my goal is to build a product that clearly reflects the values of the client through compelling designs and seamless interaction."
                     </p>
                 </div>
             </div>
-            <video autoplay muted loop class="myVideo">
-                <source src="Content/Project.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
-            <div id="Photoshop">
-                <h2>GRAPHIC DESIGN</h2>
+            <div class="demo">
+                <video autoplay muted loop class="myVideo">
+                    <source src="Content/Project.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+            <div id="Portfolio">
+                <h2>1.0 PORTFOLIO</h2>
                 <div class="gallery">
-                    <div><img src="img/img2.jpg" alt=""></div>
-                    <div><img src="img/img3.jpg" alt=""></div>
-                    <div><img src="img/img4.jpg" alt=""></div>
-                    <div><img src="img/img5.jpg" alt=""></div>
-                    <div><img src="img/img6.jpg" alt=""></div>
-                    <div><img src="img/img7.jpg" alt=""></div>
-                    <div><img src="img/img8.jpg" alt=""></div>
+                    <div class="popup" onclick="shrink()">
+                        <div class="navIcons" onclick="back()">
+                            <i class="material-icons" >navigate_before</i>
+                        </div>
+                        <p class="popupText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut aliquid quo at cumque officia cupiditate. Debitis corrupti doloremque repudiandae iste voluptatum consequatur omnis, officiis maiores facilis, soluta repellat animi blanditiis!</p>
+                        <div  class="navIcons" onclick="next()">
+                            <i class="material-icons">navigate_next</i>
+                        </div>
+                    </div>
+                    
+                    <div class="container item1" onclick="expand(1)">
+                        <img src="img/img2.jpg" alt="">
+                        <div class="overlay">
+                            <p><strong>PORTRAITS</strong><br>
+                                Double Exposure Photography
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container item2 hidden" onclick="expand(2)">
+                        <img src="img/img3.jpg" alt="">
+                        <div class="overlay">
+                            <p><strong>PORTRAITS</strong><br>
+                                Double Exposure Photography
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container item3" onclick="expand(3)">
+                        <img src="img/img4.jpg" alt="" class="landscape">
+                        <div class="overlay">
+                            <p><strong>GOOGLE CAR</strong><br>
+                                Photo Realistic Vector Art
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container item4" onclick="expand(4)">
+                        <img src="img/img5.jpg" alt="">
+                        <div class="overlay">
+                            <p><strong>THE PROMS</strong><br>
+                            Swiss Style Poster</p>
+                        </div>
+                    </div>
+                    <div class="container item5 hidden" onclick="expand(5)">
+                        <img src="img/img6.jpg" alt="">
+                        <div class="overlay">
+                            <p><strong>THE PROMS</strong><br>
+                                Swiss Style Poster</p>
+                        </div>
+                    </div>
+                    <div class="container item6" onclick="expand(6)">
+                        <img src="img/img7.jpg" alt="">
+                        <div class="overlay">
+                            <p><strong>TRUE POWER</strong><br>
+                                Digital Illustration</p>
+                        </div>
+                    </div>
+                    <div class="container item7 hidden" onclick="expand(7)">
+                        <img src="img/img8.jpg" alt="">
+                        <div class="overlay">
+                            <p><strong>TRUE POWER</strong><br>
+                                Digital Illustration</p>
+                        </div>
+                    </div>
+                    <div class="container item8" onclick="expand(8)">
+                        <video autoplay muted loop class="myVideo">
+                            <source src="img/img9.mov" type="video/mp4">
+                        </video>
+                        <div class="overlay">
+                            <p><strong>Vibe Check</strong><br>
+                                Standalone Web Application</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- <p>Photoshop</p> -->
             </div>
+            <div>
+                <h2>2.0 PROJECTS</h2>
+                <p>Come Back Soon!</p>
+            </div>
         </main>
         <!-- Main Contant -->
-        <footer></footer>
+        <footer>
+
+        </footer>
         <script src="index.js"></script>
     </body>
 </html>
