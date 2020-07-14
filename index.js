@@ -5,26 +5,22 @@ var popup_state = 0;
 function about(){
     document.querySelector(".main").scrollTo(0, window.innerHeight);
     menu_state = true;
-    menuToggle();
 }
 
 function portfolio(){
     document.querySelector(".main").scrollTo(0, window.innerHeight*3);
     menu_state = true;
-    menuToggle();
 }
 
 function projects(){
     document.querySelector(".main").scrollTo(0, window.innerHeight*4);
     menu_state = true;
-    menuToggle();
 }
 
-function contact(){
-    document.querySelector(".main").scrollTo(0, window.innerHeight*10);
-    menu_state = true;
-    menuToggle();
-}
+// function contact(){
+//     document.querySelector(".main").scrollTo(0, window.innerHeight*10);
+//     menu_state = true;
+// }
 
 function menuToggle(){
     if(menu_state == false){
@@ -34,10 +30,12 @@ function menuToggle(){
         document.querySelector("#menu1").style.width = "30vw";
         menu_state = true;
     } else if(menu_state == true){
-        document.querySelector("#menu").style.opacity = "0";
         document.querySelector("#menu").style.width = "0vw";
         document.querySelector("#menu").style.height = "0vh";
         document.querySelector("#menu1").style.width = "0vw";
+        setTimeout(function(){
+            document.querySelector("#menu").style.opacity = "0";
+        }, 1);
         menu_state = false;
     }
 }
@@ -46,7 +44,7 @@ function menuToggle(){
 
 function expand(num){  
     popup_state = num;
-    if(num === 2 || num === 5 || num === 7){
+    if(num === 2 || num === 5 || num === 7 || num === 9){
     document.querySelector(".item"+num).style.display = "block";
     }
     document.querySelector(".item"+num).style.width = "50vh";
@@ -61,7 +59,7 @@ function expand(num){
 }
 
 function shrink(){
-    if(popup_state === 2 || popup_state === 5 || popup_state === 7){
+    if(popup_state === 2 || popup_state === 5 || popup_state === 7 || popup_state === 9){
     document.querySelector(".item"+popup_state).style.display = "none";
     }
     document.querySelector(".item"+popup_state).style.width = "25vw";
@@ -104,13 +102,14 @@ var popupText = [
     },
     {text: "<strong>Tools:</strong></br> Adobe Illustrator <br><strong>Project:</strong></br> Typography & Design <br><br><strong>Description:</strong><br> I was tasked with creating a poster that was to be made up of primarily text and a minimal amount of graphics. It was to evoke the International Typographic Style or Swiss Style. And so, I was given a document with plain text which I organized based on informational hierarchy. Based on the information, I used colors, fonts, and graphics that displayed a more classical or orchestral feeling."
     },
-    {text: "<strong>Tools:</strong></br> Adobe Illustrator <br><strong>Project:</strong></br> Typography & Design <br><br><strong>Description:</strong><br>"
+    {text: "<strong>Description:</strong><br> For this second iteration, I used a sans-serif font and incorporated more geometric shapes to give the poster a more modern effect. The real challenge for this version was the large amount of text that I had to incorporate into the poster. I really wanted to give this a more minimalist look, so the geometric shapes would have to be the main focus."
     },
-    {text: "Text for the Westside post 1"
+    {text: "<strong>Tools:</strong></br> Adobe Photoshop <br><strong>Project:</strong></br> Typography, Illustration & Design <br><br><strong>Description:</strong><br> I had the opportunity to illustrate and design a couple of posts for Westside's Social Media. As a result of the COVID-19 pandemic, much has shifted online for Westside Church and there has been a greater need for more content creation. For these designs, I was given the text and a basic style guide to follow."
     },
-    {text: "Text for the Westside post 2"
+    {text: "<strong>Description:</strong><br> I had the opportunity to illustrate and design a couple of posts for Westside's Social Media. As a result of the COVID-19 pandemic, much has shifted online for Westside Church and there has been a greater need for more content creation. For these designs, I was given the text and a basic style guide to follow. <br><br>Credits:</br> Westside Church | Style Guide<br>visit: www.instagram.com/wchurchca"
     },
-    {text: "Text for the VibeCheck"
+    {text: "<strong>Tools:</strong></br> Figma, Visual Studio Code, Node.js, Storybook, Next.js, GitHub & Heroku <br><strong>Project:</strong></br> Web Design, HTML, CSS, JS, UI/UX <br><br><strong>Description:</strong><br>I worked with a couple of my classmates to build a standalone web application called Vibe Check. Vibe Check is a mood management and mixtape generator that provides you with a list of resources and a small playlist based on your current mood. We all contributed to the planning and brainstorming for the project, but my primary role was to build the prototype based on the style guide and develop the app both front and backend."
     },
-    
+    {text: "<strong>Neumorphism:</strong><br>Vibe Check makes use of Neumorphism which has become a popular design trend recently. This was both exciting and challenging in the development process. Not only does it require the precise values for the buttons to look convincing, but we also had buttons placed on a gradient background that would change based on the users mood. But overall, it was a welcomed challenge that helped me to grow as a developer.<br><br>Credits:</br> Sylvia Ly | Concept, Style Guide & Project Manager</br> Mabel Liang | Research, Frontend Developer<br>visit: http://vibecheckapp.herokuapp.com"
+    },
 ];
