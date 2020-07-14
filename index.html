@@ -9,14 +9,14 @@
     <body>
         <!-- Top Bar -->
         <header>
-                <div id="menu">
+                <div id="menu" onclick="menuToggle()">
                     <div id="menu1">
-                        <i class="material-icons" onclick="menuToggle()">close</i>
+                        <i class="material-icons">close</i>
                         <ul>
                             <li onclick="about()">About</li>
                             <li onclick="portfolio()">Portfolio</li>
                             <li onclick="projects()">Projects</li>
-                            <li onclick="contact()">Contact</li>
+                            <!-- <li onclick="contact()">Contact</li> -->
                         </ul>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     <a onclick="about()">ABOUT</a>
                     <a onclick="portfolio()">PORTFOLIO</a>
                     <a onclick="projects()">PROJECTS</a>
-                    <a onclick="contact()">CONTACT</a>
+                    <!-- <a onclick="contact()">CONTACT</a> -->
                 </div>
                 <i class="material-icons" onclick="menuToggle()">menu</i>
             <!-- </div> -->
@@ -43,27 +43,36 @@
                     <hr>
                     <p>Digital Designer / Frontend Developer</p>
                     <hr>
+                    <div class="social">
+                        <a href="https://www.facebook.com/joseph.li.754570"><img src="img/facebook.png" alt="" class="icon" ></a>
+                        <a href="https://www.instagram.com/joseph061200/"><img src="img/instagram.png" alt="" class="icon" ></a>
+                        <a href="https://www.linkedin.com/in/joseph-li-694a731a3/"><img src="img/linkedin.png" alt="" class="icon" ></a> 
+                        <a href="mailto:joseph.kingofdreams@gmail.com">joseph.kingofdreams@gmail.com</a>
+                    </div>
                 </div>
             </div>
             
             <div class="about">
                 <img src="img/img1.png" alt="Image of Joseph Li">
                 <div>
-                    <h2>ABOUT</h2>
+                    <p>1.0</p><h1> ABOUT</h1>
                     <p>"My passion is delivering high quality products to both the client and consumer that will exceed their expectations. I&#39m a student at the British Columbia Institute of Technology (BCIT), and I am eager to learn, grow, and help others succeed along the way. <br><br>
 
-                    The past year I&#39ve been working with my classmates to complete projects that will enhance the user&#39s experience and communicate a brand&#39s identity in the most effective way. As a Web/User Interface Designer, my goal is to build a product that clearly reflects the values of the client through compelling designs and seamless interaction."
+                    The past year I&#39ve been working with my classmates to complete projects that will enhance the user&#39s experience and communicate a brand&#39s identity in the most effective way. As a Web/User Interface Designer, my goal is to build products that clearly reflects the values of the client through compelling designs and seamless interaction."
                     </p>
                 </div>
             </div>
             <div class="demo">
-                <video autoplay muted loop class="myVideo">
-                    <source src="Content/Project.mp4" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                </video>
+                
+                <div class="vidBack">
+                    <video autoplay muted loop controls class="myVideo">
+                        <source src="Content/Project.mp4#t=1.5" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
             </div>
             <div id="Portfolio">
-                <h2>1.0 PORTFOLIO</h2>
+                <p>2.0</p><h1> PORTFOLIO</h1>
                 <div class="gallery">
                     <div class="popup" onclick="shrink()">
                         <div class="navIcons" onclick="back()">
@@ -128,8 +137,17 @@
                         </div>
                     </div>
                     <div class="container item8" onclick="expand(8)">
-                        <video autoplay muted loop class="myVideo">
+                        <video autoplay muted loop>
                             <source src="img/img9.mov" type="video/mp4">
+                        </video>
+                        <div class="overlay">
+                            <p><strong>Vibe Check</strong><br>
+                                Standalone Web Application</p>
+                        </div>
+                    </div>
+                    <div class="container item9 hidden" onclick="expand(9)">
+                        <video autoplay muted loop>
+                            <source src="img/img10.mov" type="video/mp4">
                         </video>
                         <div class="overlay">
                             <p><strong>Vibe Check</strong><br>
@@ -139,9 +157,9 @@
                 </div>
                 <!-- <p>Photoshop</p> -->
             </div>
-            <div>
-                <h2>2.0 PROJECTS</h2>
-                <p>Come Back Soon!</p>
+            <div id="Projects">
+                <p>3.0</p><h1> PROJECTS</h1>
+                <p>Currently working on a project. Details coming soon!</p>
             </div>
         </main>
         <!-- Main Contant -->
